@@ -1,7 +1,7 @@
 var AdminModelActions = function(actionErrorMessage, actionConfirmations) {
-    // Actions helpers. TODO: Move to separate file
+    // batch actions helpers
     this.execute = function(name) {
-        var selected = $('input.action-checkbox:checked').size();
+        var selected = $('input.action-checkbox:checked').length;
 
         if (selected === 0) {
             alert(actionErrorMessage);
@@ -48,3 +48,4 @@ var AdminModelActions = function(actionErrorMessage, actionConfirmations) {
         });
     });
 };
+var modelActions = new AdminModelActions(JSON.parse($('#message-data').text()), JSON.parse($('#actions-confirmation-data').text()));
